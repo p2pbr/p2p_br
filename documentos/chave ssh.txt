@@ -1,0 +1,178 @@
+-----------------------------------
+git config credential.username 'p2pbr'
+
+
+
+Verifique se há a chave SSH existente
+
+Gerar nova chave SSH
+
+Adicione uma nova chave SSH
+Teste sua conexão SSH
+Senhas-chave SSH
+SOLUÇÃO DE PROBLEMAS SSH
+VERIFICAR ASSINATURAS DE COMPROMISSO
+VERIFICAÇÃO DE SOLUÇÃO DE PROBLEMAS
+Este artigo também está disponível em português.
+Autenticação/Conecte-se com o SSH/Gerar nova chave SSH
+Inglês
+
+Gerando uma nova chave SSH e adicionando-a ao ssh-agent
+Versão do artigo
+Grátis, Pro e Equipe
+Neste artigo
+Sobre a geração-chave SSH
+Gerando uma nova chave SSH
+Adicionando sua chave SSH ao ssh-agent
+Gerando uma nova chave SSH para uma chave de segurança de hardware
+Leitura suplementar
+Depois de verificar se você verifica se há chaves SSH existentes, você pode gerar uma nova chave SSH para usar para autenticação e, em seguida, adicioná-la ao ssh-agent.
+Mac
+Windows
+Linux
+generating-a-new-ssh-key-and-a…Sobre a geração-chave SSH
+Se você ainda não tem uma chave SSH, você deve gerar uma nova chave SSH para usar para autenticação. Se você não tem certeza se já tem uma chave SSH, você pode verificar se há chaves existentes. Para obter mais informações, consulte "Verificando as chaves SSH existentes."
+Se você quiser usar uma chave de segurança de hardware para autenticar no GitHub, você deve gerar uma nova chave SSH para sua chave de segurança de hardware. Você deve conectar sua chave de segurança de hardware ao computador quando autenticar com o par de chaves. Para obter mais informações, consulte as notas de versão OpenSSH 8.2.
+Se você não quiser reentrar na sua senha toda vez que usar sua chave SSH, você pode adicionar sua chave ao agente SSH, que gerencia suas teclas SSH e se lembra de sua senha.
+generating-a-new-ssh-key-and-a…Gerando uma nova chave SSH
+1
+Open Git Bash.
+2
+Cole o texto abaixo, substituindo em seu endereço de e-mail do GitHub.
+$ 
+ssh-keygen -t ed25519 -C "jaime.paiva@faculdadeimpacta.com.br"
+
+Nota: Se você estiver usando um sistema legado que não suporta o algoritmo Ed25519, use:
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+Isso cria uma nova chave SSH, usando o e-mail fornecido como rótulo.
+> Generating public/private algorithm key pair.
+1
+Quando você for solicitado a "Digitar um arquivo para salvar a tecla", pressione Enter. Isso aceita o local padrão do arquivo.
+> Enter a file in which to save the key (/c/Users/you/.ssh/id_algorithm):[Press enter]
+2
+No prompt, digite uma senha segura. Para obter mais informações, consulte "Trabalhando com senhas-chave SSH."
+> Enter passphrase (empty for no passphrase): [Type a passphrase]
+> Enter same passphrase again: [Type passphrase again]
+generating-a-new-ssh-key-and-a…Adicionando sua chave SSH ao ssh-agent
+Antes de adicionar uma nova chave SSH ao ssh-agent para gerenciar suas chaves, você deve ter verificado as chaves SSH existentes e gerado uma nova chave SSH.
+Se você tiver o GitHub Desktop instalado, você pode usá-lo para clonar repositórios e não lidar com chaves SSH.
+1
+Certifique-se de que o agente ssh está funcionando. Você pode usar as instruções "Lançamento automático do agente ssh" em "Trabalhando com senhas de teclas SSH", ou iniciá-lo manualmente:
+# start the ssh-agent in the background
+
+
+
+$ eval "$(ssh-agent -s)"
+> Agent pid 59566
+
+2
+
+
+Adicione sua chave privada SSH ao agente ssh. Se você criou sua chave com um nome diferente ou se estiver adicionando uma chave existente que tenha um nome diferente, substitua id_ed25519 no comando com o nome do seu arquivo de chave privada.
+$ 
+ssh-add ~/.ssh/id_ed25519
+
+
+3
+
+
+Adicione a chave SSH à sua conta no GitHub. Para obter mais informações, consulte "Adicionando uma nova chave SSH à sua conta do GitHub."
+generating-a-new-ssh-key-and-a…Gerando uma nova chave SSH para uma chave de segurança de hardware
+Se você estiver usando macOS ou Linux, talvez seja necessário atualizar seu cliente SSH ou instalar um novo cliente SSH antes de gerar uma nova chave SSH. Para obter mais informações, consulte "Erro: tipo de tecla desconhecida."
+1
+Insira sua chave de segurança de hardware no computador.
+2
+Open Git Bash.
+3
+Cole o texto abaixo, substituindo no endereço de e-mail para sua conta no GitHub.
+$ ssh-keygen -t ed25519-sk -C "your_email@example.com"
+Nota: Se o comando falhar e você receber o erro ou estiver usando uma chave de segurança de hardware que não suporte o algoritmo Ed25519. Digite o seguinte comando.invalid formatfeature not supported,
+$ ssh-keygen -t ecdsa-sk -C "your_email@example.com"
+4
+Quando for solicitado, toque no botão na tecla de segurança do hardware.
+5
+Quando você for solicitado a "Digitar um arquivo no qual salvar a tecla", pressione Enter para aceitar o local de arquivo padrão.
+> Enter a file in which to save the key (/c/Users/you/.ssh/id_ed25519_sk):[Press enter]
+6
+Quando você for solicitado a digitar uma senha, pressione Enter.
+> Enter passphrase (empty for no passphrase): [Type a passphrase]
+> Enter same passphrase again: [Type passphrase again]
+7
+Adicione a chave SSH à sua conta no GitHub. Para obter mais informações, consulte "Adicionando uma nova chave SSH à sua conta do GitHub."
+generating-a-new-ssh-key-and-a…Leitura suplementar
+• "Sobre ssh"
+• "Trabalhando com senhas-chave SSH"
+• "Autorizando uma chave SSH para uso com assinatura única SAML"
+Esse médico te ajudou?
+Política de privacidade
+Ajude-nos a fazer esses médicos ótimos!
+Todos os documentos do GitHub são de código aberto. Vê algo errado ou não? Envie uma solicitação de tração.
+Faça uma contribuição
+Ou, aprenda a contribuir.
+Ainda precisa de ajuda?
+Pergunte à comunidade do GitHub
+Suporte de contato
+© 2021 GitHub, Inc.
+Termos
+Privacidade
+Segurança
+Estado
+Ajuda
+Página inicial
+Entrar em contato com o GitHub
+Precificação
+API do desenvolvedor
+Formação
+Blogue
+Sobre
+Role até o topo
+ 
+Gerando uma nova chave SSH e adicionando-a ao ssh-agent
+ 
+
+===========================
+
+
+
+
+jaime paiva@DESKTOP-FIU97ER MINGW64 ~
+$ ssh-keygen -t ed25519 -C "jaime.paiva@faculdadeimpacta.com.br"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/jaime paiva/.ssh/id_ed25519):
+Created directory '/c/Users/jaime paiva/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/jaime paiva/.ssh/id_ed25519
+
+Your public key has been saved in 
+/c/Users/jaime paiva/.ssh/id_ed25519.pub
+
+The key fingerprint is:
+SHA256:g/31hU5Yk4H4iVn8yETc/jmHk/tZTQHnViAAUhwZAto jaime.paiva@faculdadeimpacta.com.br
+The key's randomart image is:
++--[ED25519 256]--+
+|    ..oo==.*o+oo.|
+|   o   oo . *.=o.|
+|  . E      B =++ |
+|       o  o =o+o.|
+|      . S   o o++|
+|         o . ++=+|
+|          .   oo=|
+|              . o|
+|               o.|
++----[SHA256]-----+
+
+jaime paiva@DESKTOP-FIU97ER MINGW64 ~
+$
+================
+
+
+
+jaime paiva@DESKTOP-FIU97ER MINGW64 ~
+$ ssh-add ~/.ssh/id_ed25519
+Identity added: /c/Users/jaime paiva/.ssh/
+id_ed25519 (jaime.paiva@faculdadeimpacta.com.br)
+
+jaime paiva@DESKTOP-FIU97ER MINGW64 ~
+$
+
