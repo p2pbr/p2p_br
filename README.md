@@ -3,3 +3,4 @@
 url:
 https://github.com/p2pbr/p2p_br.git
 
+nova chave add
