@@ -9,7 +9,7 @@ import br.com.empresas.modelos.response.EnderecoViaCepDTO;
 import br.com.empresas.modelos.response.RetornoApiResponse;
 import br.com.empresas.service.BuscaEnderecoService;
 import br.com.empresas.view.ResponseBuscaEnderecoViaCep;
-import br.com.empresas.view.ResponseViewModel;
+import br.com.empresas.view.ResponseDataModel;
 
 @Component
 public class BuscaEnderecoHelper {
@@ -17,7 +17,7 @@ public class BuscaEnderecoHelper {
 	@Autowired
 	private BuscaEnderecoService buscaEnderecoService;
 
-	public ResponseViewModel<ResponseBuscaEnderecoViaCep> mapearbuscaEnderecoViaCep(RequestCep requestCep) {
+	public ResponseDataModel<ResponseBuscaEnderecoViaCep> mapearbuscaEnderecoViaCep(RequestCep requestCep) {
 		RetornoApiResponse<EnderecoViaCepDTO> retornoApiResponse = buscaEnderecoService.buscaEnderecoViaCep(requestCep);
 		return BuscaEnderecoMapper.mapearEndereco(retornoApiResponse.getData());
 	}

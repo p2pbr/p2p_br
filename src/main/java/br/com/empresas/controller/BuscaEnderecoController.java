@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.empresas.helper.BuscaEnderecoHelper;
 import br.com.empresas.modelos.request.RequestCep;
 import br.com.empresas.view.ResponseBuscaEnderecoViaCep;
-import br.com.empresas.view.ResponseViewModel;
+import br.com.empresas.view.ResponseDataModel;
 
 @RestController
 public class BuscaEnderecoController {
@@ -18,7 +18,7 @@ public class BuscaEnderecoController {
 	private BuscaEnderecoHelper buscaEnderecoHelper;
 
 	@RequestMapping(value = "/cep", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseViewModel<ResponseBuscaEnderecoViaCep> buscaEnderecoViaCep(@RequestBody RequestCep requestCep) {
+	public ResponseDataModel<ResponseBuscaEnderecoViaCep> buscaEnderecoViaCep(@RequestBody RequestCep requestCep) {
 		
 		return buscaEnderecoHelper.mapearbuscaEnderecoViaCep(requestCep);
 	}

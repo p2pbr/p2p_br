@@ -2,13 +2,13 @@ package br.com.empresas.mapper;
 
 import br.com.empresas.modelos.response.EnderecoViaCepDTO;
 import br.com.empresas.view.ResponseBuscaEnderecoViaCep;
-import br.com.empresas.view.ResponseViewModel;
+import br.com.empresas.view.ResponseDataModel;
 
 public class BuscaEnderecoMapper {
 
-	public static ResponseViewModel<ResponseBuscaEnderecoViaCep> mapearEndereco(EnderecoViaCepDTO enderecoViaCepDTO) {
+	public static ResponseDataModel<ResponseBuscaEnderecoViaCep> mapearEndereco(EnderecoViaCepDTO enderecoViaCepDTO) {
 
-		ResponseViewModel<ResponseBuscaEnderecoViaCep> responseViewModel = new ResponseViewModel<>();
+		ResponseDataModel<ResponseBuscaEnderecoViaCep> responseDataModel = new ResponseDataModel<>();
 		ResponseBuscaEnderecoViaCep responseBuscaEnderecoViaCep = new ResponseBuscaEnderecoViaCep();
 
 		responseBuscaEnderecoViaCep.setBairro(enderecoViaCepDTO.getBairro());
@@ -21,9 +21,9 @@ public class BuscaEnderecoMapper {
 		responseBuscaEnderecoViaCep.setLogradouro(enderecoViaCepDTO.getLogradouro());
 		responseBuscaEnderecoViaCep.setSiafi(enderecoViaCepDTO.getSiafi());
 		responseBuscaEnderecoViaCep.setUf(enderecoViaCepDTO.getUf());
-		responseViewModel.setData(responseBuscaEnderecoViaCep);
+		responseDataModel.setData(responseBuscaEnderecoViaCep);
 
-		return responseViewModel;
+		return responseDataModel;
 
 	}
 

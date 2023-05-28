@@ -1,6 +1,6 @@
 package br.com.empresas.view;
 
-public class ResponseViewModel<T> {
+public class ResponseDataModel<T> {
 
 	private T data;
 
