@@ -19,7 +19,7 @@ public class BuscaEnderecoHelper {
 
 	public ResponseViewModel<ResponseBuscaEnderecoViaCep> mapearbuscaEnderecoViaCep(RequestCep requestCep) {
 		RetornoApiResponse<EnderecoViaCepDTO> retornoApiResponse = buscaEnderecoService.buscaEnderecoViaCep(requestCep);
-		return BuscaEnderecoMapper.mapearEndereco(retornoApiResponse);
+		return BuscaEnderecoMapper.mapearEndereco(retornoApiResponse.getData());
 	}
 
 }

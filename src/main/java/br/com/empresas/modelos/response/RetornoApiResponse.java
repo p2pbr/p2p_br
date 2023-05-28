@@ -1,8 +1,11 @@
 package br.com.empresas.modelos.response;
 
 public class RetornoApiResponse<T> {
+
 	private T data;
+
 	private int statusCode;
+
 	private boolean error;
 
 	public RetornoApiResponse(T data) {
