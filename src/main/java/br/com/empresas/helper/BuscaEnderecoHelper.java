@@ -1,0 +1,24 @@
+package br.com.empresas.helper;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import br.com.empresas.modelos.request.RequestCep;
+import br.com.empresas.service.BuscaEnderecoService;
+import br.com.empresas.view.ResponseBuscaEnderecoViaCep;
+import br.com.empresas.view.ResponseViewModel;
+
+@Component
+public class BuscaEnderecoHelper {
+
+	@Autowired
+	private BuscaEnderecoService buscaEnderecoService;
+
+	public ResponseViewModel<ResponseBuscaEnderecoViaCep> mapearbuscaEnderecoViaCep(RequestCep requestCep) {
+
+		String ResponseEndereco = buscaEnderecoService.buscaEnderecoViaCep(requestCep);
+
+		return ResponseEndereco.toString();
+	}
+
+}
