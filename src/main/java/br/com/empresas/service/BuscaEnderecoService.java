@@ -1,11 +1,11 @@
 package br.com.empresas.service;
 
-import br.com.empresas.modelos.request.RequestCep;
+import br.com.empresas.modelos.request.DataApiRequest;
 import br.com.empresas.modelos.response.EnderecoViaCepDTO;
-import br.com.empresas.modelos.response.RetornoApiResponse;
+import br.com.empresas.modelos.response.DataApiResponse;
 
 public interface BuscaEnderecoService {
 
-	public RetornoApiResponse<EnderecoViaCepDTO> buscaEnderecoViaCep(RequestCep requestCep);
+	public DataApiResponse<EnderecoViaCepDTO> buscaEnderecoViaCep(DataApiRequest dataApiRequest);
 
 }

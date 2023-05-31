@@ -1,6 +1,6 @@
 package br.com.empresas.modelos.request;
 
-public class RequestCep {
+public class DataApiRequest {
 
 	private String cep;
 

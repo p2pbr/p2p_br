@@ -1,27 +1,27 @@
 package br.com.empresas.mapper;
 
 import br.com.empresas.modelos.response.EnderecoViaCepDTO;
-import br.com.empresas.view.ResponseBuscaEnderecoViaCep;
-import br.com.empresas.view.ResponseDataModel;
+import br.com.empresas.view.ViaCepBuscaEnderecoResponse;
+import br.com.empresas.view.ApiDataViewModel;
 
 public class BuscaEnderecoMapper {
 
-	public static ResponseDataModel<ResponseBuscaEnderecoViaCep> mapearEndereco(EnderecoViaCepDTO enderecoViaCepDTO) {
+	public static ApiDataViewModel<ViaCepBuscaEnderecoResponse> mapearEndereco(EnderecoViaCepDTO enderecoViaCepDTO) {
 
-		ResponseDataModel<ResponseBuscaEnderecoViaCep> responseDataModel = new ResponseDataModel<>();
-		ResponseBuscaEnderecoViaCep responseBuscaEnderecoViaCep = new ResponseBuscaEnderecoViaCep();
+		ApiDataViewModel<ViaCepBuscaEnderecoResponse> responseDataModel = new ApiDataViewModel<>();
+		ViaCepBuscaEnderecoResponse viaCepBuscaEnderecoResponse = new ViaCepBuscaEnderecoResponse();
 
-		responseBuscaEnderecoViaCep.setBairro(enderecoViaCepDTO.getBairro());
-		responseBuscaEnderecoViaCep.setCep(enderecoViaCepDTO.getCep());
-		responseBuscaEnderecoViaCep.setComplemento(enderecoViaCepDTO.getComplemento());
-		responseBuscaEnderecoViaCep.setDdd(enderecoViaCepDTO.getDdd());
-		responseBuscaEnderecoViaCep.setGia(enderecoViaCepDTO.getGia());
-		responseBuscaEnderecoViaCep.setIbge(enderecoViaCepDTO.getIbge());
-		responseBuscaEnderecoViaCep.setLocalidade(enderecoViaCepDTO.getLocalidade());
-		responseBuscaEnderecoViaCep.setLogradouro(enderecoViaCepDTO.getLogradouro());
-		responseBuscaEnderecoViaCep.setSiafi(enderecoViaCepDTO.getSiafi());
-		responseBuscaEnderecoViaCep.setUf(enderecoViaCepDTO.getUf());
-		responseDataModel.setData(responseBuscaEnderecoViaCep);
+		viaCepBuscaEnderecoResponse.setBairro(enderecoViaCepDTO.getBairro());
+		viaCepBuscaEnderecoResponse.setCep(enderecoViaCepDTO.getCep());
+		viaCepBuscaEnderecoResponse.setComplemento(enderecoViaCepDTO.getComplemento());
+		viaCepBuscaEnderecoResponse.setDdd(enderecoViaCepDTO.getDdd());
+		viaCepBuscaEnderecoResponse.setGia(enderecoViaCepDTO.getGia());
+		viaCepBuscaEnderecoResponse.setIbge(enderecoViaCepDTO.getIbge());
+		viaCepBuscaEnderecoResponse.setLocalidade(enderecoViaCepDTO.getLocalidade());
+		viaCepBuscaEnderecoResponse.setLogradouro(enderecoViaCepDTO.getLogradouro());
+		viaCepBuscaEnderecoResponse.setSiafi(enderecoViaCepDTO.getSiafi());
+		viaCepBuscaEnderecoResponse.setUf(enderecoViaCepDTO.getUf());
+		responseDataModel.setData(viaCepBuscaEnderecoResponse);
 
 		return responseDataModel;
 

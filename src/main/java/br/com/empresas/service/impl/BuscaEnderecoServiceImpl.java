@@ -6,9 +6,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
-import br.com.empresas.modelos.request.RequestCep;
+import br.com.empresas.modelos.request.DataApiRequest;
 import br.com.empresas.modelos.response.EnderecoViaCepDTO;
-import br.com.empresas.modelos.response.RetornoApiResponse;
+import br.com.empresas.modelos.response.DataApiResponse;
 import br.com.empresas.service.BuscaEnderecoService;
 
 @Service
@@ -18,17 +18,17 @@ public class BuscaEnderecoServiceImpl implements BuscaEnderecoService {
 	RestTemplate restTemplate;
 
 	@Override
-	public RetornoApiResponse<EnderecoViaCepDTO> buscaEnderecoViaCep(RequestCep requestCep) {
-		String cep = requestCep.getCep();
+	public DataApiResponse<EnderecoViaCepDTO> buscaEnderecoViaCep(DataApiRequest dataApiRequest) {
+		String cep = dataApiRequest.getCep();
 		String url = "https://viacep.com.br/ws/" + cep + "/json/";
 
 		try {
 			EnderecoViaCepDTO enderecoViaCep = restTemplate.getForObject(url, EnderecoViaCepDTO.class);
-			return new RetornoApiResponse<>(enderecoViaCep);
+			return new DataApiResponse<>(enderecoViaCep);
 		} catch (HttpClientErrorException ex) {
 			HttpStatus statusCode = ex.getStatusCode();
 
-			return new RetornoApiResponse<EnderecoViaCepDTO>(statusCode.value());
+			return new DataApiResponse<EnderecoViaCepDTO>(statusCode.value());
 
 		}
 	}
