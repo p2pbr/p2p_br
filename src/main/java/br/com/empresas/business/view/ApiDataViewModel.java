@@ -1,4 +1,4 @@
-package br.com.empresas.view;
+package br.com.empresas.business.view;
 
 public class ApiDataViewModel<T> {
 

@@ -1,8 +1,8 @@
-package br.com.empresas.mapper;
+package br.com.empresas.business.mapper;
 
-import br.com.empresas.modelos.response.EnderecoViaCepDTO;
-import br.com.empresas.view.ViaCepBuscaEnderecoResponse;
-import br.com.empresas.view.ApiDataViewModel;
+import br.com.empresas.business.modelos.response.EnderecoViaCepDTO;
+import br.com.empresas.business.view.ApiDataViewModel;
+import br.com.empresas.business.view.ViaCepBuscaEnderecoResponse;
 
 public class BuscaEnderecoMapper {
 

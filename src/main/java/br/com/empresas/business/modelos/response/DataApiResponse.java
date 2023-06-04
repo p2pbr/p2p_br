@@ -1,4 +1,4 @@
-package br.com.empresas.modelos.response;
+package br.com.empresas.business.modelos.response;
 
 public class DataApiResponse<T> {
 

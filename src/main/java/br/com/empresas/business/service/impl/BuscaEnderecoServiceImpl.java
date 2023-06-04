@@ -1,4 +1,4 @@
-package br.com.empresas.service.impl;
+package br.com.empresas.business.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -6,10 +6,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
-import br.com.empresas.modelos.request.DataApiRequest;
-import br.com.empresas.modelos.response.EnderecoViaCepDTO;
-import br.com.empresas.modelos.response.DataApiResponse;
-import br.com.empresas.service.BuscaEnderecoService;
+import br.com.empresas.business.modelos.request.DataApiRequest;
+import br.com.empresas.business.modelos.response.DataApiResponse;
+import br.com.empresas.business.modelos.response.EnderecoViaCepDTO;
+import br.com.empresas.business.service.BuscaEnderecoService;
 
 @Service
 public class BuscaEnderecoServiceImpl implements BuscaEnderecoService {

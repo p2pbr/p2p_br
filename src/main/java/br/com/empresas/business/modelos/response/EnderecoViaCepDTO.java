@@ -1,6 +1,6 @@
-package br.com.empresas.view;
+package br.com.empresas.business.modelos.response;
 
-public class ViaCepBuscaEnderecoResponse {
+public class EnderecoViaCepDTO {
 
 	private String cep;
 

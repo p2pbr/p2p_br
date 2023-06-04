@@ -1,4 +1,4 @@
-package br.com.empresas.modelos.request;
+package br.com.empresas.business.modelos.request;
 
 public class DataApiRequest {
 
